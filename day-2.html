@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<!-- -->
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creative Media 2026 · Day 2</title>
+<style>
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(syncopate-latin-ext-400-normal.woff2) format('woff2');
+}
+/* syncopate-latin-ext-700-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(syncopate-latin-ext-700-normal.woff2) format('woff2');
+}
+/* syncopate-latin-400-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(syncopate-latin-400-normal.woff2) format('woff2');
+}
+/* syncopate-latin-700-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(syncopate-latin-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-ext-400-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-ext-400-italic.woff2) format('woff2');
+}
+/* montserrat-latin-ext-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-ext-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-ext-700-italic.woff2) format('woff2');
+}
+/* montserrat-latin-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-400-normal.woff2) format('woff2');
+}
+/* montserrat-latin-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-400-italic.woff2) format('woff2');
+}
+/* montserrat-latin-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-700-italic.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-ext-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-ext-600-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(jetbrains-mono-latin-ext-600-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(jetbrains-mono-latin-400-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-600-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(jetbrains-mono-latin-600-normal.woff2) format('woff2');
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#1f1e1e;overflow:hidden;font-family:'Montserrat',Arial,sans-serif;color:#fff}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#2e2d2d;overflow:hidden}
+.slide{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.slide.active{opacity:1;visibility:visible}
+.slide div:not([style*="display"]){display:flex;flex-direction:column}
+.slide>*:not([style*="position:absolute"]):not([style*="position: absolute"]):not(aside){position:relative}
+.slide h1,.slide h2,.slide h3{font-weight:600}
+.slide p,.slide h1,.slide h2,.slide h3{overflow-wrap:break-word}
+.slide a{color:inherit}
+.slide aside{display:none}
+.slide video{cursor:pointer}
+#hud{position:fixed;right:16px;bottom:12px;font:14px/1 'JetBrains Mono',monospace;color:#a9a8a8;opacity:0;transition:opacity .3s;pointer-events:none}
+body:hover #hud{opacity:.8}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:40vh;overflow:auto;background:rgba(20,20,20,.94);color:#eee;font:18px/1.5 'Montserrat',sans-serif;padding:20px 28px;white-space:pre-wrap;display:none;border-top:1px solid #444}
+#notes.on{display:block}
+#help{position:fixed;left:16px;bottom:12px;font:13px/1.4 'Montserrat',sans-serif;color:#a9a8a8;opacity:0;transition:opacity .3s;pointer-events:none}
+body:hover #help{opacity:.7}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{overflow:visible;height:auto;background:#2e2d2d}
+  #stage{position:static;transform:none!important;width:1920px;height:auto;overflow:visible;background:none}
+  .slide{position:relative;opacity:1;visibility:visible;transition:none;break-after:page;page-break-after:always}
+  #hud,#notes,#help{display:none!important}
+}
+#back{position:fixed;left:16px;top:12px;font:13px/1 Montserrat,sans-serif;color:#a9a8a8;text-decoration:none;opacity:.6;z-index:9}#back:hover{opacity:1}
+</style>
+</head>
+<body>
+<a id="back" href="index.html">← Creative Media 2026</a>
+<div id="stage">
+<section class="slide" id="cover" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:40px">
+<img src="img-90291559.png" alt="Blurred light gradient" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover">
+<p style="font-size:32px;font-weight:700;letter-spacing:10px;text-align:center;color:#ffffff">DAY 2</p>
+<h1 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:1;letter-spacing:2px;text-align:center;color:#ffffff">A FUTURE EVENT</h1>
+<p style="font-size:32px;text-align:center;color:#d9d8d8">Creative Media 2026, IM A&amp;IC, Panthéon-Sorbonne</p>
+<p style="position:absolute;right:112px;bottom:64px;width:800px;font-size:24px;font-weight:700;text-align:right;color:#ffffff">Enrique García-Alcalá</p>
+</section>
+
+<section class="slide" id="today" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute;left:300px;top:460px;width:1600px;height:760px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">TODAY</h2>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:36px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">01</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">The canvas</h3>
+<p style="font-size:26px;line-height:1.35;color:#2e2d2d">Brief, concepts, what we expect</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:36px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">02</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Make it look</h3>
+<p style="font-size:26px;line-height:1.35;color:#2e2d2d">CSS, images, video</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:36px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">14:00</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Advising</h3>
+<p style="font-size:26px;line-height:1.35;color:#2e2d2d">Optional, come with questions</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:36px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">16:00</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Presentations</h3>
+<p style="font-size:26px;line-height:1.35;color:#2e2d2d">In the room and online</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="recap" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:-300px;top:-260px;width:1100px;height:640px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">YESTERDAY</h2>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:40px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">01</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2;color:#2e2d2d">The future is built</h3>
+<p style="font-size:28px;line-height:1.35;color:#2e2d2d">Montfort, Estridentismo, Felguérez, Nortec</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:40px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">02</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2;color:#2e2d2d">Some futures get lost</h3>
+<p style="font-size:28px;line-height:1.35;color:#2e2d2d">Bifo, Fisher, slow cancellation</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;padding:40px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">03</p>
+<h3 style="font-size:44px;font-weight:700;line-height:1.2;color:#2e2d2d">The cone</h3>
+<p style="font-size:28px;line-height:1.35;color:#2e2d2d">Probable, plausible, possible, preferable</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="brief" data-transition="fade" style="background:#1f1e1e;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:1000px;top:-200px;width:1100px;height:900px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">THE BRIEF</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<p style="font-size:72px;line-height:1.1;color:#ffffff">A cultural event in 2050. You invent it</p>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">A story happens inside it, from one perspective</p>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">Teams of 3–4, one Twine per team</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Festival</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Party</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Concert</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Museum</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Exhibition</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Theatre</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Library</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Opening night</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Fair</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Heritage site</p>
+<p style="font-size:28px;color:#ffffff;padding:10px 24px;border:2px solid #a9a8a8">Ritual</p>
+</div>
+
+</section>
+
+<section class="slide" id="remote" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-877dabbf.png" alt="Small cluster of blurred lights" style="position:absolute;left:-200px;top:-200px;width:800px;height:640px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">REMOTE TEAMS</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Working from a distance</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Remote students team up only with remote students</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:40px;line-height:1.3;color:#ffffff">No hybrid teams</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Follow these slides, same canvas, same Twine</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Present online at 16:00</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">05</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Send your .html file and your canvas to egarciaa@tec.mx</p></div>
+</div>
+
+</section>
+
+<section class="slide" id="signals" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:1300px;top:600px;width:900px;height:720px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">SIGNALS</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Things you can already see today</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 96px;width:1400px">
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Summers too hot for open air</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Ticket prices going up</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">AI in music, images, curation</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Too many tourists in some cities</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Less public money for culture</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Noise rules, fewer clubs</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Everything filmed and streamed</p>
+<p style="font-size:40px;line-height:1.3;color:#ffffff">Energy is more expensive</p>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#a9a8a8">Only examples. Bring the signals you see in your own work</p>
+
+</section>
+
+<section class="slide" id="cone3" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">YOUR ENDING</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Imagine three, choose one</p>
+</div>
+<div style="display:flex;gap:64px;align-items:center">
+<svg viewBox="0 0 1100 600" style="width:1000px;height:545px;flex:none" aria-label="Futures cone. Probable inside plausible; preferable dashed. The outer possible zone is greyed out." fill="none">
+<path d="M60 300 L900 20 A60 280 0 0 1 900 580 Z" fill="#ffffff" fill-opacity="0.02" stroke="#4a4949" stroke-width="2" stroke-dasharray="6 8"/>
+<path d="M60 300 L900 110 A45 190 0 0 1 900 490 Z" fill="#ffffff" fill-opacity="0.08" stroke="#d9d8d8" stroke-width="3"/>
+<path d="M60 300 L900 210 A25 90 0 0 1 900 390 Z" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-width="3"/>
+<path d="M60 300 L900 260 A35 130 0 0 1 900 520 Z" fill="none" stroke="#ffffff" stroke-width="5" stroke-dasharray="16 10"/>
+<circle cx="60" cy="300" r="12" fill="#ffffff"/>
+</svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:40px;font-weight:700;color:#ffffff">Probable</p><p style="font-size:28px;color:#d9d8d8">trends continue</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:40px;font-weight:700;color:#ffffff">Plausible</p><p style="font-size:28px;color:#d9d8d8">one more change</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:40px;font-weight:700;color:#ffffff">Preferable</p><p style="font-size:28px;color:#d9d8d8">what you would fight for</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-size:40px;font-weight:700;color:#6f6e6e;text-decoration:line-through">Possible</p><p style="font-size:28px;color:#6f6e6e">out of the brief</p></div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="eyes" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-877dabbf.png" alt="Small cluster of blurred lights" style="position:absolute;left:-200px;top:-200px;width:800px;height:640px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">WHOSE EYES?</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">One person tells the story</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:16px">
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">Someone who attends</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">The producer, on the night</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">An artist on stage</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">Security or cleaning</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">A neighbor</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">The sponsor</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">The system that runs it</p>
+<p style="font-size:36px;font-weight:700;color:#2e2d2d;background:rgba(255,255,255,0.65);padding:32px">Someone who could not get in</p>
+</div>
+
+</section>
+
+<section class="slide" id="story" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">STRUCTURE</h2>
+<div style="display:flex;gap:24px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:28px;background:#1f1e1e;border:2px solid #ffffff">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">START</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.2;color:#ffffff">Arrival</h3>
+</div>
+<x-shape kind="arrow-right" style="width:64px;height:32px;background:#a9a8a8"></x-shape>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:28px;background:#1f1e1e;border:2px solid #ffffff">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">MIDDLE</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.2;color:#ffffff">A problem</h3>
+</div>
+<x-shape kind="arrow-right" style="width:64px;height:32px;background:#a9a8a8"></x-shape>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:28px;background:#1f1e1e;border:2px solid #ffffff">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">CHOICES</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.2;color:#ffffff">Different paths</h3>
+</div>
+<x-shape kind="arrow-right" style="width:64px;height:32px;background:#a9a8a8"></x-shape>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:28px;background:rgba(255,255,255,0.65);border:2px solid #ffffff">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#3f3e3e">END</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.2;color:#2e2d2d">Your ending</h3>
+</div>
+</div>
+<div style="display:flex;gap:64px">
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">10–12 passages</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">The paths can be different, the ending is the one you chose</p>
+</div>
+
+</section>
+
+<section class="slide" id="canvas" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:96px 112px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<p style="font-size:28px;font-weight:700;letter-spacing:6px;color:#a9a8a8">ONE SENTENCE PER BOX</p>
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">FUTURE EVENT CANVAS</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px">
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">01 THE EVENT</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">Name, what it is, where</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">02 SIGNALS</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">What we already see today that leads there</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">03 WHAT CHANGED</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">The world of the event in 2050</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">04 WHO RUNS IT</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">Who organizes, who pays</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">05 WHO IS IN</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">Who comes, who stays out</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">06 WHAT SURVIVES</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">One thing from today that is still there</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">07 WHOSE EYES</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">The person who tells the story</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:#1f1e1e;border:1px solid #6f6e6e;height:210px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">08 THE LOOK</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">Colors, typefaces, images</p>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#ffffff">09 ENDINGS</p>
+<p style="font-size:24px;color:#a9a8a8">Write the three, choose one for your Twine</p>
+</div>
+<div style="display:flex;gap:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:rgba(255,255,255,0.65);height:150px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#2e2d2d">PROBABLE</p>
+<p style="font-size:24px;line-height:1.35;color:#3f3e3e">If today’s trends continue</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:rgba(255,255,255,0.65);height:150px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#2e2d2d">PLAUSIBLE</p>
+<p style="font-size:24px;line-height:1.35;color:#3f3e3e">If one more thing changes</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:24px 28px;background:rgba(255,255,255,0.65);height:150px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#2e2d2d">PREFERABLE</p>
+<p style="font-size:24px;line-height:1.35;color:#3f3e3e">The one you would fight for</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="example" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:96px 112px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<p style="font-size:28px;font-weight:700;letter-spacing:6px;color:#a9a8a8">EXAMPLE</p>
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:64px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">EL FESTIVAL INVERNAL</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px">
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">THE EVENT</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">A music festival that only happens on winter nights</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">SIGNALS</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">Heat waves, summer festivals cancelled</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">WHAT CHANGED</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">Summer is for staying inside, winter is for going out</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">WHO RUNS IT</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">A cooperative of small venues, with city money</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">WHO IS IN</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">Residents with a culture pass. Tourists pay double</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">WHAT SURVIVES</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">Dancing in the street, together</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">WHOSE EYES</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">The sound technician of the main stage</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#1f1e1e;border:1px solid #6f6e6e;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#a9a8a8">THE LOOK</p>
+<p style="font-size:24px;line-height:1.35;color:#ffffff">Cold blue, breath in the air, flashlights</p>
+</div>
+</div>
+<div style="display:flex;gap:12px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:rgba(255,255,255,0.35);height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#1f1e1e">PROBABLE</p>
+<p style="font-size:24px;line-height:1.35;color:#1f1e1e">An energy company buys the festival. Shorter, more expensive</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:rgba(255,255,255,0.35);height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#1f1e1e">PLAUSIBLE</p>
+<p style="font-size:24px;line-height:1.35;color:#1f1e1e">A blackout. The festival moves into the metro stations</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:20px 24px;background:#ffffff;border:4px solid #ffffff;height:190px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;color:#2e2d2d">PREFERABLE · CHOSEN</p>
+<p style="font-size:24px;line-height:1.35;color:#2e2d2d">Free stages in every neighborhood, run by local associations</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="attendus" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1100px;top:720px;width:1100px;height:600px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">ATTENDUS</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">What we will look at</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px 96px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:34px;line-height:1.3;color:#ffffff">Every link leads somewhere</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">06</p><p style="font-size:34px;line-height:1.3;color:#ffffff">The reader understands what changed since today</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:34px;line-height:1.3;color:#ffffff">The story happens inside your event</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">07</p><p style="font-size:34px;line-height:1.3;color:#ffffff">The canvas and the Twine tell the same story</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:34px;line-height:1.3;color:#ffffff">The ending sits in the probable, plausible or preferable</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">08</p><p style="font-size:34px;line-height:1.3;color:#ffffff">“Created by” and every name, inside the Twine</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:34px;line-height:1.3;color:#ffffff">One clear perspective</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">09</p><p style="font-size:34px;line-height:1.3;color:#ffffff">Presented at 16:00, in the room or online</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">05</p><p style="font-size:34px;line-height:1.3;color:#ffffff">A style of its own</p></div>
+</div>
+
+</section>
+
+<section class="slide" id="credits" data-transition="fade" style="background:#1f1e1e;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:1180px;top:520px;width:1000px;height:820px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">SIGN IT</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">In the first passage of your Twine</p>
+</div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:36px;line-height:1.5;color:#ffffff;background:#2e2d2d;padding:32px 40px;align-self:flex-start">Created by<br>Name Surname, Name Surname, Name Surname</p>
+<p style="font-size:56px;line-height:1.15;color:#ffffff">No names, no grade</p>
+
+</section>
+
+<section class="slide" id="look" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">THE LOOK</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Same passage, two worlds</p>
+</div>
+<div style="display:flex;gap:32px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;letter-spacing:4px;color:#a9a8a8">CYBERPUNK, 1980s · OFTEN PROBABLE</p>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;background:#0e0d14;padding:48px">
+<p style="font-family:'Courier New', monospace;font-size:32px;line-height:1.5;color:#e6e6ff">In 2050 the festival starts at sunset. The stage is a parking lot.</p>
+<p style="font-family:'Courier New', monospace;font-size:32px;line-height:1.5;color:#ff2bd6;text-shadow:0 0 8px #ff2bd6">Follow the music</p>
+<p style="font-family:'Courier New', monospace;font-size:32px;line-height:1.5;color:#ff2bd6;text-shadow:0 0 8px #ff2bd6">Go home</p>
+</div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;letter-spacing:4px;color:#a9a8a8">SOLARPUNK, 2010s · OFTEN PREFERABLE</p>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px;background:#f3ecd8;padding:48px">
+<p style="font-family:Georgia, serif;font-size:34px;line-height:1.5;color:#2f3b1f">In 2050 the festival starts at sunset. The stage is a parking lot.</p>
+<p style="font-family:Georgia, serif;font-size:34px;font-style:italic;line-height:1.5;color:#5f8a2e">Follow the music</p>
+<p style="font-family:Georgia, serif;font-size:34px;font-style:italic;line-height:1.5;color:#5f8a2e">Go home</p>
+</div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="style-it" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<div style="position:absolute;left:0;top:0;width:880px;height:1080px;background:#e9e9e5"></div>
+<img src="img-a0db049d.jpg" alt="Twine 2 editor: a map of linked passages and a passage being edited" style="position:absolute;left:40px;top:200px;width:800px;height:680px;object-fit:contain">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1360px;top:-300px;width:820px;height:600px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">STYLE IT</h2>
+<p style="font-size:32px;line-height:1.3;text-align:right;color:#d9d8d8">The look is part of the world</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;line-height:1.3;color:#ffffff;background:#1f1e1e;padding:16px 24px">Story › Stylesheet</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">One CSS file for the whole story</p>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;width:300px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#ffffff">tw-story</p><p style="font-size:28px;line-height:1.35;color:#d9d8d8">the whole page</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;width:300px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#ffffff">tw-passage</p><p style="font-size:28px;line-height:1.35;color:#d9d8d8">the text box</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;width:300px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#ffffff">tw-link</p><p style="font-size:28px;line-height:1.35;color:#d9d8d8">every link</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;width:300px;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#ffffff">tw-sidebar</p><p style="font-size:28px;line-height:1.35;color:#d9d8d8">the undo and redo arrows</p></div>
+</div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="more-css" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">CSS RECIPES</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#ffffff">Colors and links</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.45;color:#ffffff;background:#1f1e1e;padding:20px 24px">tw-story {<br>&#160;&#160;background: #0e0d14;<br>&#160;&#160;color: #e6e6ff;<br>}<br>tw-link { color: #ff2bd6; }</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#ffffff">An image behind everything</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.45;color:#ffffff;background:#1f1e1e;padding:20px 24px">tw-story {<br>&#160;&#160;background: url("URL") center / cover;<br>}</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#ffffff">A Google font, first line of the stylesheet</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.45;color:#ffffff;background:#1f1e1e;padding:20px 24px">@import url("https://fonts.googleapis.com/<br>&#160;&#160;css2?family=Space+Mono");<br>tw-story { font-family: "Space Mono"; }</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#ffffff">A box to read on</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.45;color:#ffffff;background:#1f1e1e;padding:20px 24px">tw-passage {<br>&#160;&#160;background: rgba(0,0,0,0.6);<br>&#160;&#160;padding: 2em;<br>}</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="media" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">MEDIA</h2>
+<p style="font-size:32px;line-height:1.3;text-align:right;color:#d9d8d8">Inside any passage, if you want</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:32px;align-items:center"><p style="width:200px;flex:none;font-size:32px;font-weight:700;color:#ffffff">Image</p><p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#ffffff;background:#1f1e1e;padding:14px 24px">&lt;img src="URL" width="100%"&gt;</p></div>
+<div style="display:flex;gap:32px;align-items:center"><p style="width:200px;flex:none;font-size:32px;font-weight:700;color:#ffffff">Video</p><p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#ffffff;background:#1f1e1e;padding:14px 24px">&lt;video src="URL.mp4" autoplay loop muted width="100%"&gt;&lt;/video&gt;</p></div>
+<div style="display:flex;gap:32px;align-items:center"><p style="width:200px;flex:none;font-size:32px;font-weight:700;color:#ffffff">YouTube</p><p style="flex:1;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#ffffff;background:#1f1e1e;padding:14px 24px">&lt;iframe width="100%" height="400" src="https://www.youtube.com/embed/ID"&gt;&lt;/iframe&gt;</p></div>
+</div>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Right click on an image, copy image address. The YouTube ID is the part after watch?v=</p>
+
+</section>
+
+<section class="slide" id="fill-canvas" data-transition="fade" style="background:#1f1e1e;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute;left:300px;top:500px;width:1600px;height:760px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">FILL THE CANVAS</h2>
+<p style="font-size:28px;font-weight:700;letter-spacing:6px;text-align:right;color:#a9a8a8">20 MIN</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<p style="font-size:72px;line-height:1.1;color:#ffffff">Canvas first, Twine after</p>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">One sentence per box</p>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">Start with signals, finish with the endings</p>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">Choose your ending, then open Twine</p>
+</div>
+
+</section>
+
+<section class="slide" id="build" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute;left:-260px;top:340px;width:1500px;height:720px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">BUILD</h2>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">PRODUCER</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">Canvas, coherence, time</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">WRITER</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">Passages and links</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">DESIGNER</p>
+<h3 style="font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">Stylesheet and images</h3>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">First goal: you can play from arrival to your ending</p>
+
+</section>
+
+<section class="slide" id="advising" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:1300px;top:600px;width:900px;height:720px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">ADVISING</h2>
+<p style="font-size:28px;font-weight:700;letter-spacing:6px;text-align:right;color:#a9a8a8">14:00 · OPTIONAL</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<p style="font-size:72px;line-height:1.1;color:#ffffff">Come with questions</p>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">Bring your canvas and your Twine</p>
+</div>
+
+</section>
+
+<section class="slide" id="polish" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1100px;top:720px;width:1100px;height:600px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">BEFORE 16:00</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:40px;line-height:1.3;color:#ffffff">“Created by” and all your names in the first passage</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Play it from the start, every path</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Build › Publish to File</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:40px;line-height:1.3;color:#ffffff">Send the .html and the canvas to egarciaa@tec.mx</p></div>
+</div>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#ffffff;background:#1f1e1e;padding:14px 24px;align-self:flex-start">team-names_event.html</p>
+
+</section>
+
+<section class="slide" id="show-us" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:1240px;top:560px;width:1000px;height:820px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">PRESENTATIONS</h2>
+<p style="font-size:28px;font-weight:700;letter-spacing:6px;text-align:right;color:#a9a8a8">16:00 · IN THE ROOM AND ONLINE · 5 MIN PER TEAM</p>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">01</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Your event and its signals</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">02</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Whose eyes, which ending</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">03</p>
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Play one path, live</h3>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="question" data-transition="fade" style="background:#1f1e1e;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:-300px;top:-260px;width:1100px;height:640px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:96px;font-weight:700;line-height:1.05;letter-spacing:2px;color:#ffffff">DOES THE FUTURE STILL EXIST?</h2>
+<p style="font-size:40px;line-height:1.3;color:#d9d8d8">One word each</p>
+
+</section>
+
+<section class="slide" id="merci" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:40px">
+<img src="img-90291559.png" alt="Blurred light gradient" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover">
+<h1 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:160px;font-weight:700;line-height:1;letter-spacing:2px;text-align:center;color:#ffffff">MERCI</h1>
+<p style="font-size:32px;text-align:center;color:#ffffff">Enrique García-Alcalá</p>
+<p style="font-size:32px;text-align:center;color:#d9d8d8">egarciaa@tec.mx</p>
+</section>
+
+</div>
+<div id="notes"></div>
+<div id="hud"></div>
+<div id="help">← → move · F fullscreen · Home/End</div>
+<script>
+(function(){
+  var stage=document.getElementById('stage');
+  var slides=[].slice.call(stage.querySelectorAll('section.slide'));
+  var notes=document.getElementById('notes'), hud=document.getElementById('hud');
+  var cur=0;
+  function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+s+')';}
+  function show(i){
+    i=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,k){
+      s.classList.toggle('active',k===i);
+      s.querySelectorAll('video').forEach(function(v){ if(k===i){v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;v.play();});} else {v.pause();} });
+    });
+    cur=i;
+    var a=slides[i].querySelector('aside'); notes.textContent=a?a.textContent.trim():'';
+    hud.textContent=(i+1)+' / '+slides.length;
+    if(location.hash!=='#'+(i+1)) history.replaceState(null,'','#'+(i+1));
+  }
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(cur+1);}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(cur-1);}
+    else if(k==='Home'){show(0);} else if(k==='End'){show(slides.length-1);}
+    else if(k==='f'||k==='F'){ if(!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+    else if(k==='n'||k==='N'){notes.classList.toggle('on');}
+  });
+  stage.addEventListener('click',function(e){
+    if(e.target.tagName==='VIDEO'){var v=e.target; v.muted=false; if(v.paused)v.play(); else v.pause(); return;}
+    if(e.target.closest('a'))return;
+    show(e.clientX>window.innerWidth/2?cur+1:cur-1);
+  });
+  window.addEventListener('resize',fit);
+  fit();
+  var h=parseInt(location.hash.slice(1),10); show(isNaN(h)?0:h-1);
+})();
+</script>
+</body>
+</html>

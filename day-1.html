@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+<!-- -->
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creative Media 2026</title>
+<style>
+/* syncopate-latin-ext-400-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(syncopate-latin-ext-400-normal.woff2) format('woff2');
+}
+/* syncopate-latin-ext-700-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(syncopate-latin-ext-700-normal.woff2) format('woff2');
+}
+/* syncopate-latin-400-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(syncopate-latin-400-normal.woff2) format('woff2');
+}
+/* syncopate-latin-700-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(syncopate-latin-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-ext-400-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-ext-400-italic.woff2) format('woff2');
+}
+/* montserrat-latin-ext-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-ext-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-ext-700-italic.woff2) format('woff2');
+}
+/* montserrat-latin-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-400-normal.woff2) format('woff2');
+}
+/* montserrat-latin-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-400-italic.woff2) format('woff2');
+}
+/* montserrat-latin-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-700-italic.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-ext-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-ext-600-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(jetbrains-mono-latin-ext-600-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(jetbrains-mono-latin-400-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-600-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(jetbrains-mono-latin-600-normal.woff2) format('woff2');
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#1f1e1e;overflow:hidden;font-family:'Montserrat',Arial,sans-serif;color:#fff}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center;background:#2e2d2d;overflow:hidden}
+.slide{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.slide.active{opacity:1;visibility:visible}
+.slide div:not([style*="display"]){display:flex;flex-direction:column}
+.slide>*:not([style*="position:absolute"]):not([style*="position: absolute"]):not(aside){position:relative}
+.slide h1,.slide h2,.slide h3{font-weight:600}
+.slide p,.slide h1,.slide h2,.slide h3{overflow-wrap:break-word}
+.slide a{color:inherit}
+.slide aside{display:none}
+.slide video{cursor:pointer}
+#hud{position:fixed;right:16px;bottom:12px;font:14px/1 'JetBrains Mono',monospace;color:#a9a8a8;opacity:0;transition:opacity .3s;pointer-events:none}
+body:hover #hud{opacity:.8}
+#notes{position:fixed;left:0;right:0;bottom:0;max-height:40vh;overflow:auto;background:rgba(20,20,20,.94);color:#eee;font:18px/1.5 'Montserrat',sans-serif;padding:20px 28px;white-space:pre-wrap;display:none;border-top:1px solid #444}
+#notes.on{display:block}
+#help{position:fixed;left:16px;bottom:12px;font:13px/1.4 'Montserrat',sans-serif;color:#a9a8a8;opacity:0;transition:opacity .3s;pointer-events:none}
+body:hover #help{opacity:.7}
+@media print{
+  @page{size:1920px 1080px;margin:0}
+  html,body{overflow:visible;height:auto;background:#2e2d2d}
+  #stage{position:static;transform:none!important;width:1920px;height:auto;overflow:visible;background:none}
+  .slide{position:relative;opacity:1;visibility:visible;transition:none;break-after:page;page-break-after:always}
+  #hud,#notes,#help{display:none!important}
+}
+#back{position:fixed;left:16px;top:12px;font:13px/1 Montserrat,sans-serif;color:#a9a8a8;text-decoration:none;opacity:.6;z-index:9}#back:hover{opacity:1}
+</style>
+</head>
+<body>
+<a id="back" href="index.html">← Creative Media 2026</a>
+<div id="stage">
+<section class="slide" id="cover" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:40px">
+<img src="img-90291559.png" alt="Blurred light gradient" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover">
+<h1 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:1;letter-spacing:2px;text-align:center;color:#ffffff">CREATIVE MEDIA 2026</h1>
+<p style="font-size:32px;letter-spacing:10px;text-align:center;color:#ffffff">INTERNATIONAL SEMINAR</p>
+<p style="font-size:32px;text-align:center;color:#d9d8d8">IM A&amp;IC, Panthéon-Sorbonne</p>
+<p style="position:absolute;right:112px;bottom:64px;width:800px;font-size:24px;font-weight:700;text-align:right;color:#ffffff">Enrique García-Alcalá</p>
+</section>
+
+<section class="slide" id="me-origins" data-transition="fade" style="background:#2e2d2d">
+  <img src="img-4f64553d.jpg" alt="Hopscotch painted on the ground, from TERRE to CIEL" style="position:absolute; top:0; left:0; width:880px; height:1080px">
+  <img src="img-fe1e0ecb.png" alt="Blurred blue arc" id="e2-r9xfc1" style="position:absolute; top:0; left:1360px; width:820px; height:600px; object-fit:contain">
+  <div id="e3-r9xfc1" style="position:absolute; top:112px; left:976px; width:832px; height:856px; display:flex; flex-direction:column; gap:48px; justify-content:space-between">
+    <h2 style="font-family:Syncopate, sans-serif; font-size:72px; font-weight:700; line-height:1; letter-spacing:2px; text-align:right; color:#ffffff">ABOUT ME</h2>
+    <div style="display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.3; color:#ffffff">Sound as code, 2014–2016</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Digital artist and creative technologist</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Digital Music Production Engineering, Tecnológico de Monterrey</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Master in Interactive Media Arts, NYU Tisch</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Code, sound and liminal space</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">daedograma</p>
+    </div>
+  </div>
+  
+</section>
+
+<section class="slide" id="me-multimedia" data-transition="fade" style="background:#2e2d2d">
+  <img src="img-90b37987.jpg" alt="Aerial view of the Centro Nacional de las Artes, Mexico City" style="position:absolute; top:0; left:0; width:880px; height:422.2px">
+  <img src="img-0d3916ba.jpg" alt="Biblioteca Vasconcelos: hanging bookshelves and the whale skeleton in the main hall" data-crop="x" style="object-position:50% 100%;position:absolute; top:422.21px; left:0; width:880px; height:525px">
+  <p id="e3-1wq4qmx" style="position:absolute; bottom:0; left:0; width:880px; padding:16px 48px; font-family:Montserrat, Arial, sans-serif; font-size:24px; color:#d9d8d8; background:#1f1e1ebf">CENART. Biblioteca Vasconcelos, <i>Mátrix Móvil</i>, Gabriel Orozco. Photos: ProtoplasmaKid, J. C. Fonseca Mata, Alequihdez, CC BY-SA 4.0</p>
+  <img src="img-877dabbf.png" alt="Small cluster of blurred lights" id="e4-1wq4qmx" style="position:absolute; top:0; left:1480px; width:700px; height:560px; object-fit:contain">
+  <div id="e5-1wq4qmx" style="position:absolute; top:112px; left:976px; width:832px; height:856px; display:flex; flex-direction:column; gap:48px; justify-content:space-between">
+    <h2 style="font-family:Syncopate, sans-serif; font-size:72px; font-weight:700; line-height:1; letter-spacing:2px; text-align:right; color:#ffffff">CENTRO MULTIMEDIA</h2>
+    <div style="display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.3; color:#ffffff">Researcher, Audio Lab</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Centro Nacional de las Artes (CENART), Mexico City</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Workshops on code and sound</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Cultural events</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8"><i>Subsónica</i>, concert series</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Biblioteca Vasconcelos, Mexico City</p>
+    </div>
+  </div>
+  
+</section>
+
+<section class="slide" id="me-ccd" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<img src="img-d387f77b.jpg" alt="Visitors in a blue and violet light installation at the Centro de Cultura Digital" style="position:absolute;left:0;top:0;width:880px;height:560px;object-fit:cover">
+<div style="position:absolute;left:0;top:560px;width:880px;height:520px;background:#ffffff"></div>
+<img src="img-b423bafe.png" alt="Arborescencia programada: a tree drawn with words" style="position:absolute;left:40px;top:600px;width:800px;height:400px;object-fit:contain">
+<p style="position:absolute;left:48px;bottom:32px;width:784px;font-size:24px;color:#3f3e3e"><i>Arborescencia programada</i>, 2018</p>
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1360px;top:-300px;width:820px;height:600px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">CENTRO DE CULTURA DIGITAL</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">2017–2022</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Interaction Developer, then Director of Technology</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Secretaría de Cultura, Mexico City</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Mensajes Sonoros</i>, sound and music cycle</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Arborescencia programada</i>, 2018, with Carlos Bergen</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">A generative poem that grows from what you write</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="me-nyu" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<img src="img-8ccf916d.jpg" alt="Visitors in front of two screens showing a forest and a purple stage, under a scaffold" style="position:absolute;left:0;top:0;width:880px;height:1080px;object-fit:cover">
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:1380px;top:-300px;width:860px;height:700px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">NYU IMA</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">2020–2022</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">ITP/IMA Low Res, Tisch School of the Arts, New York University</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Thesis: <i>The voice we hear through time</i>, 2021</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">“A space to become lost and found”</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Visitors leave traces for future strangers</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="me-lum" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<a href="https://vimeo.com/670248372" target="_blank" rel="noopener"><img src="img-c3485eed.jpg" alt="Rastros, rostros: video projection on the University of Guanajuato facade at night" style="position:absolute;left:0;top:0;width:880px;height:1080px;object-fit:cover"></a><a href="https://vimeo.com/670248372" target="_blank" rel="noopener" style="position:absolute;left:370px;top:470px;width:140px;height:140px;border-radius:50%;background:rgba(31,30,30,0.7);border:3px solid #ffffff;display:flex;align-items:center;justify-content:center;color:#ffffff;font-size:56px;text-decoration:none;padding-left:10px">▶</a>
+<p style="position:absolute;left:0;bottom:0;width:880px;padding:16px 48px;font-size:24px;color:#d9d8d8;background:rgba(31, 30, 30, 0.75)"><i>Rastros, rostros</i>. Festival Internacional Cervantino, Guanajuato, 2022</p>
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:1400px;top:-320px;width:860px;height:700px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">LUM ARTE Y MEDIOS</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Interactive media studio</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Founder</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Light installations, projection, pixel mapping</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Rastros, rostros</i>, Cervantino, 2022</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Solar</i>, <i>Jardín onírico</i></p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="af3a6c62" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<a href="https://vimeo.com/816633000" target="_blank" rel="noopener"><img src="img-92db0540.jpg" alt="Rastros, rostros: light and video at night, Cervantino 2022" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover"></a><a href="https://vimeo.com/816633000" target="_blank" rel="noopener" style="position:absolute;left:890px;top:470px;width:140px;height:140px;border-radius:50%;background:rgba(31,30,30,0.7);border:3px solid #ffffff;display:flex;align-items:center;justify-content:center;color:#ffffff;font-size:56px;text-decoration:none;padding-left:10px">▶</a>
+<div style="position:absolute;left:0;bottom:0;width:1920px;display:flex;justify-content:space-between;align-items:center;padding:24px 112px;background:rgba(31, 30, 30, 0.75)">
+<p style="font-size:32px;line-height:1.3;color:#ffffff"><i>Rastros, rostros</i>. LUM Arte y Medios. Festival Internacional Cervantino, Guanajuato, 2022</p>
+<p style="font-size:24px;line-height:1.3;color:#d9d8d8"><a href="https://vimeo.com/816633000">vimeo.com/816633000</a></p>
+</div>
+
+</section>
+
+<section class="slide" id="me-queretaro" data-transition="fade" style="background:#2e2d2d">
+  <img src="img-ea61d8b6.jpg" alt="The Querétaro aqueduct at night, with the city lights behind" style="position:absolute; top:0; left:0; width:880px; height:440px">
+  <img src="img-d23d7311.jpg" alt="Two glowing light boxes with color gradients in a dark industrial space" style="position:absolute; top:440px; left:0; width:330px; height:640px">
+  <img src="img-e9a9dd45.jpg" alt="Within on VIVERSE: a seated figure, a glowing lantern and pink and blue walls of the maze" style="position:absolute; top:440px; left:330px; width:550px; height:640px">
+  <p style="position:absolute; bottom:0; left:0; width:880px; padding:16px 48px; font-family:Montserrat, Arial, sans-serif; font-size:24px; color:#d9d8d8; background:#1f1e1ebf">Acueducto, Querétaro. <i>Within</i>, VIVERSE, 2025</p>
+  <img src="img-877dabbf.png" alt="Small cluster of blurred lights" style="position:absolute; top:0; left:1480px; width:700px; height:560px; object-fit:contain">
+  <div style="position:absolute; top:112px; left:976px; width:832px; height:856px; display:flex; flex-direction:column; gap:48px; justify-content:space-between">
+    <h2 style="font-family:Syncopate, sans-serif; font-size:72px; font-weight:700; line-height:1; letter-spacing:2px; text-align:right; color:#ffffff">NOW</h2>
+    <div style="display:flex; flex-direction:column; gap:16px">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.3; color:#ffffff">Querétaro, since 2022</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Director of the Master in Digital Art and New Media, Tecnológico de Monterrey</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">I teach interaction/game design and new media art</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8"><i>Within</i>, generative audiovisual maze, HTC Viverse, 2025</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8"><i>Rutinas</i>, MEXTRÓPOLI</p>
+    </div>
+  </div>
+  
+</section>
+
+<section class="slide" id="mam" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<img src="img-eda52663.jpg" alt="A person speaks into a microphone in a yellow-lit room while visitors watch" style="position:absolute;left:0;top:0;width:880px;height:1080px;object-fit:cover">
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:1380px;top:-300px;width:860px;height:700px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">MAM</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Master in Digital Art and New Media</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Tecnológico de Monterrey</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">School of Architecture, Art and Design</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">National online program, based in Querétaro</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="now-2026" data-transition="fade" style="display:flex; flex-direction:column; gap:64px; justify-content:space-between; padding:112px; background:#2e2d2d">
+  <img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute; top:460px; left:160px; width:1600px; height:760px; object-fit:contain">
+  <h2 style="font-family:Syncopate, sans-serif; font-size:112px; font-weight:700; line-height:0.95; letter-spacing:2px; text-align:right; color:#ffffff">2026</h2>
+  <div style="width:1500px; display:flex; flex-direction:column; gap:24px">
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:6px; color:#d9d8d8">PHD, PARIS 1 PANTHÉON-SORBONNE</p>
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:72px; font-style:italic; line-height:1.1; color:#ffffff">“Does the future still exist?”</p>
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">A poetics of the possible in the electronic arts</p>
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Assesed by Jean-Marie Dallet</p>
+  </div>
+  
+</section>
+
+<section class="slide" id="intros" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:64px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1100px;top:720px;width:1100px;height:600px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">INTRODUCTIONS</h2>
+<div style="display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;align-items:center;gap:32px">
+<img src="img-2edec64f.png" alt="Orange and cyan orb" style="width:96px;height:96px;object-fit:contain">
+<p style="font-size:40px;font-weight:700;line-height:1.2;color:#ffffff">Your name</p>
+</div>
+<div style="display:flex;align-items:center;gap:32px">
+<img src="img-dedf8c5f.png" alt="Violet and magenta orb" style="width:96px;height:96px;object-fit:contain">
+<p style="font-size:40px;font-weight:700;line-height:1.2;color:#ffffff">What you do</p>
+</div>
+<div style="display:flex;align-items:center;gap:32px">
+<img src="img-098f30ae.png" alt="Blue and lime orb" style="width:96px;height:96px;object-fit:contain">
+<p style="font-size:40px;font-weight:700;line-height:1.2;color:#ffffff">A future you imagined at 12</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="two-days" data-transition="fade" style="display:flex; flex-direction:column; gap:48px; justify-content:space-between; padding:112px; background:#2e2d2d">
+  <img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute; top:300px; left:0; width:1500px; height:720px; object-fit:contain">
+  <h2 style="font-family:Syncopate, sans-serif; font-size:112px; font-weight:700; line-height:0.95; letter-spacing:2px; text-align:right; color:#ffffff">Schedule</h2>
+  <div style="display:flex; flex-direction:row; gap:16px">
+    <div style="display:flex; flex-direction:column; gap:16px; flex:1">
+      <div style="display:flex; flex-direction:column; gap:8px; padding:40px; background:#ffffffa6">
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">TUE 10:00</p>
+        <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">Futures we inherited</h3>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; padding:40px; background:#ffffffa6">
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">TUE 14:00</p>
+        <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">Imagine and build</h3>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:16px; flex:1">
+      <div style="display:flex; flex-direction:column; gap:8px; padding:40px; background:#ffffffa6">
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">WED 10:00</p>
+        <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">Make it look, make it play</h3>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px; padding:40px; background:#ffffffa6">
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">WED 14:00</p>
+        <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">Play and present</h3>
+      </div>
+    </div>
+  </div>
+  <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">Final piece: an interactive story in Twine about a cultural future</p>
+</section>
+
+<section class="slide" id="koselleck" data-transition="fade" style="background:#2e2d2d">
+  <img src="img-2da6e09c.jpg" alt="Turner, Rain, Steam and Speed: a train crossing a bridge in rain and mist" style="position:absolute; top:0; left:0; width:880px; height:1080px">
+  <p style="position:absolute; bottom:0; left:0; width:880px; padding:16px 48px; font-family:Montserrat, Arial, sans-serif; font-size:24px; color:#d9d8d8; background:#1f1e1ebf">J. M. W. Turner, <i>Rain, Steam and Speed</i>, 1844</p>
+  <img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute; top:0; left:1360px; width:820px; height:600px; object-fit:contain">
+  <div style="position:absolute; top:112px; left:976px; width:832px; height:856px; display:flex; flex-direction:column; gap:40px; justify-content:space-between">
+    <div style="display:flex; flex-direction:column; gap:16px">
+      <h2 style="font-family:Syncopate, sans-serif; font-size:72px; font-weight:700; line-height:1; letter-spacing:2px; text-align:right; color:#ffffff">FUTURES PAST</h2>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.3; text-align:right; color:#d9d8d8">The open future is a modern idea</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:20px">
+      <div style="display:flex; flex-direction:column; gap:8px">
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; font-weight:700; line-height:1.3; color:#ffffff">Reinhart Koselleck, <i>Futures Past</i>, 1979</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">01</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:28px; line-height:1.35; color:#ffffff">Before 1750, tomorrow looks like yesterday. Seasons, kings, religion repeat</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">02</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:28px; line-height:1.35; color:#ffffff">1750–1850, revolutions, trains and science open the future</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">03</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:28px; line-height:1.35; color:#ffffff">Progress, revolution, history with a direction</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">04</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:28px; line-height:1.35; color:#ffffff">Turner paints the train as speed, 1844</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section class="slide" id="montfort" data-transition="fade" style="display:flex; flex-direction:column; gap:48px; justify-content:space-between; padding:112px; background:#2e2d2d">
+  <img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute; top:520px; left:1180px; width:1000px; height:820px; object-fit:contain">
+  <div style="display:flex; flex-direction:column; gap:24px; align-items:end">
+    <h2 style="font-family:Syncopate, sans-serif; font-size:112px; font-weight:700; line-height:0.95; letter-spacing:2px; text-align:right; color:#ffffff">MONTFORT</h2>
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; line-height:1.3; text-align:right; color:#d9d8d8">Future is built, not guessed</p>
+  </div>
+  <div style="display:flex; flex-direction:row; gap:96px; align-items:end">
+    <div style="width:640px; display:flex; flex-direction:column; gap:12px; flex:0 0 auto">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.3; color:#ffffff">Nick Montfort, <i>The Future</i>, MIT Press, 2017</p>
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:28px; line-height:1.4; color:#a9a8a8">Poet, programmer, professor at MIT</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:24px; flex:1">
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">01</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.35; color:#ffffff">The future is made with tools, stories and machines</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">02</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.35; color:#ffffff">World’s fairs, science fiction, design and computing all made futures</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">03</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.35; color:#ffffff">Douglas Engelbart, 1968. Mouse, hypertext and video calls in one public demo</p>
+      </div>
+      <div style="display:flex; flex-direction:row; gap:24px; align-items:baseline">
+        <p style="flex:0 0 auto; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a8a8">04</p>
+        <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.35; color:#ffffff">Twenty years later, most people had a personal computer</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<section class="slide" id="hyperstition" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-877dabbf.png" alt="Small cluster of blurred lights" style="position:absolute;left:-200px;top:-200px;width:800px;height:640px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">HYPERSTITION</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Stories about the future can produce it</p>
+</div>
+<div style="display:flex;gap:96px;align-items:flex-end">
+<div style="width:640px;flex:none;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:36px;font-weight:700;line-height:1.3;color:#ffffff">CCRU, Cybernetic Culture Research Unit</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">University of Warwick, 1995–2003</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Sadie Plant, Nick Land, Mark Fisher</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Hyper + superstition</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:32px;line-height:1.35;color:#ffffff">A fiction becomes real when many people believe it and repeat it</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:32px;line-height:1.35;color:#ffffff">William Gibson invents “cyberspace” for <i>Neuromancer</i>, 1984</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:32px;line-height:1.35;color:#ffffff">Ten years later the word names the internet</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:32px;line-height:1.35;color:#ffffff">Engineers build what they have read</p></div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="lost-mx" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">LOST FUTURES</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Some examples from Mexico</p>
+<p style="font-size:28px;line-height:1.4;text-align:right;color:#a9a8a8;max-width:1100px">Futures that someone imagined and started to build, then left behind. Mark Fisher, <i>Ghosts of My Life: Writing on Depression, Hauntology and Lost Futures</i>, 2014</p>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img-90e10365.jpg" alt="Estridentista woodcut" style="width:404px;height:360px;object-fit:cover">
+<p style="font-size:32px;font-weight:700;line-height:1.2;color:#ffffff">1921</p>
+<p style="font-size:24px;line-height:1.3;color:#a9a8a8">Estridentismo</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img-df7362db.jpg" alt="Torres de Satélite" style="width:404px;height:360px;object-fit:cover">
+<p style="font-size:32px;font-weight:700;line-height:1.2;color:#ffffff">1958</p>
+<p style="font-size:24px;line-height:1.3;color:#a9a8a8">Torres de Satélite</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img-155bc695.jpg" alt="Felguérez print" style="width:404px;height:360px;object-fit:cover">
+<p style="font-size:32px;font-weight:700;line-height:1.2;color:#ffffff">1975</p>
+<p style="font-size:24px;line-height:1.3;color:#a9a8a8">Felguérez, <i>La máquina estética</i></p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<img src="img-bcc18755.jpg" alt="Nortec Collective album cover" style="width:404px;height:360px;object-fit:cover">
+<p style="font-size:32px;font-weight:700;line-height:1.2;color:#ffffff">2001</p>
+<p style="font-size:24px;line-height:1.3;color:#a9a8a8">Nortec, <a href="https://youtu.be/xBbrDMRkS2U" style="color:#d9d8d8">▶ <i>Olvídela Compa</i></a></p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="estridentismo" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<img src="img-90e10365.jpg" alt="Estridentista woodcut: a modern building with the word ESTRIDENTISMO on a vertical sign" style="position:absolute;left:0;top:0;width:880px;height:1080px;object-fit:cover">
+<p style="position:absolute;left:0;bottom:0;width:880px;padding:16px 48px;font-size:24px;color:#d9d8d8;background:rgba(31, 30, 30, 0.75)">Estridentista woodcut, 1920s</p>
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1360px;top:-300px;width:820px;height:600px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">ESTRIDENTISMO</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Mexico City, 1921</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Actual No. 1</i>, Manuel Maples Arce, a poster on city walls</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">“Chopin a la silla eléctrica”</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Radio, machines, the modern city</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Estridentópolis, Xalapa, 1925–1927</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="satelite" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<img src="img-df7362db.jpg" alt="The five Torres de Satélite: blue, white, yellow, red and white concrete towers" style="position:absolute;left:0;top:0;width:880px;height:1080px;object-fit:cover">
+<p style="position:absolute;left:0;bottom:0;width:880px;padding:16px 48px;font-size:24px;color:#d9d8d8;background:rgba(31, 30, 30, 0.75)">Photo: ProtoplasmaKid, CC BY-SA 4.0</p>
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:1400px;top:-320px;width:860px;height:700px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">TORRES DE SATÉLITE</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">1957–1958</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Mathias Goeritz, Luis Barragán</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Gate to Ciudad Satélite, a new city by Mario Pani</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Seven towers planned, up to 200 m</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Five built after budget cuts, tallest 52 m</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Today in the middle of the Periférico freeway</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="nortec" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<div style="position:absolute;left:0;top:0;width:880px;height:1080px;background:#1f1e1e"></div>
+<img src="img-bcc18755.jpg" alt="Album cover of Tijuana Sessions Vol. 3: a man in a hat and star sunglasses, a bus and Tijuana landscapes" style="position:absolute;left:0;top:100px;width:880px;height:880px;object-fit:cover">
+<p style="position:absolute;left:0;bottom:0;width:880px;padding:16px 48px;font-size:24px;color:#d9d8d8;background:rgba(31, 30, 30, 0.75)">Nortec Collective, <i>Tijuana Sessions Vol. 3</i>, 2005</p>
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:1380px;top:-300px;width:860px;height:700px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">NORTEC</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Nortec Collective, Tijuana</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>The Tijuana Sessions Vol. 1</i>, 2001</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Norteño + techno</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Samples of tuba and accordion</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Bostich, Fussible and others</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Late 2000s, drug-war violence empties Tijuana’s nightlife</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="felguerez" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<div style="position:absolute;left:0;top:0;width:880px;height:640px;background:#f4f4f2"></div>
+<img src="img-155bc695.jpg" alt="Print by Manuel Felguérez: geometric shapes in grey and brown with two red circles" style="position:absolute;left:40px;top:30px;width:800px;height:580px;object-fit:contain">
+<img src="img-02e7559a.jpg" alt="A stack of punched computer cards" style="position:absolute;left:0;top:640px;width:880px;height:440px;object-fit:cover">
+<p style="position:absolute;left:0;bottom:0;width:880px;padding:16px 48px;font-size:24px;color:#d9d8d8;background:rgba(31, 30, 30, 0.75)">Manuel Felguérez, print. Punched cards, photo: ArnoldReinhold, CC BY-SA 3.0</p>
+<img src="img-877dabbf.png" alt="Small cluster of blurred lights" style="position:absolute;left:1480px;top:-220px;width:700px;height:560px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">FELGUÉREZ</h2>
+<p style="font-size:32px;line-height:1.3;text-align:right;color:#d9d8d8">Generative art in Mexico, 1970s</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Manuel Felguérez, 1928–2020</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Painter and sculptor, Generación de la Ruptura</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">From 1970, IBM computers and punched cards</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>La máquina estética</i>, 1975</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">The computer combines a model of his forms into new sketches</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Up to 200 drawings a day</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">In the 1980s he turns the computer off for good</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="question" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:48px">
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:-420px;top:140px;width:1200px;height:960px;object-fit:contain">
+<h2 style="width:1300px;font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1.1;letter-spacing:2px;text-align:right;color:#ffffff">WHO MADE THIS FUTURE?</h2>
+<h2 style="width:1300px;font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1.1;letter-spacing:2px;text-align:right;color:#ffffff">FOR WHOM?</h2>
+<h2 style="width:1300px;font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1.1;letter-spacing:2px;text-align:right;color:#ffffff">WHO WAS NOT INVITED?</h2>
+</section>
+
+<section class="slide" id="pairs" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute;left:300px;top:420px;width:1600px;height:780px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">IN PAIRS</h2>
+<p style="font-size:32px;font-weight:700;letter-spacing:6px;text-align:right;color:#d9d8d8">20 MIN</p>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:rgba(255, 255, 255, 0.65);padding:32px">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">A future you were promised</h3>
+<p style="font-size:28px;line-height:1.4;color:#3f3e3e">A film, a technology, a song, a place</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:rgba(255, 255, 255, 0.65);padding:32px">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">Who promised it</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:rgba(255, 255, 255, 0.65);padding:32px">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">What happened to it</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:rgba(255, 255, 255, 0.65);padding:32px">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d">How it adapted</h3>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="slow-cancellation" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:-300px;top:-260px;width:1100px;height:640px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">SLOW CANCELLATION</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Culture stops producing new futures</p>
+</div>
+<div style="display:flex;gap:96px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<p style="font-size:24px;font-weight:700;letter-spacing:6px;color:#a9a8a8">BIFO</p>
+<p style="font-size:36px;font-weight:700;line-height:1.3;color:#ffffff">Franco Berardi, Bologna, 1949</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Radio Alice, pirate radio, 1976–1977</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8"><i>After the Future</i>, 2011</p>
+<p style="font-size:30px;line-height:1.35;color:#ffffff;margin-top:12px">The 20th century believed in the future, from Futurism to the space race</p>
+<p style="font-size:30px;line-height:1.35;color:#ffffff">That belief is over</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px">
+<p style="font-size:24px;font-weight:700;letter-spacing:6px;color:#a9a8a8">FISHER</p>
+<p style="font-size:36px;font-weight:700;line-height:1.3;color:#ffffff">Mark Fisher, 1968–2017</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">k-punk blog, CCRU</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8"><i>Capitalist Realism</i>, 2009. <i>Ghosts of My Life</i>, 2014</p>
+<p style="font-size:30px;line-height:1.35;color:#ffffff;margin-top:12px">Culture repeats its own past</p>
+<p style="font-size:30px;line-height:1.35;color:#ffffff">A 2005 song by Arctic Monkeys could be from 1980</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:32px;font-style:italic;line-height:1.35;color:#d9d8d8">“It is easier to imagine the end of the world than the end of capitalism.”</p>
+<p style="font-size:24px;line-height:1.35;color:#a9a8a8">Fredric Jameson and Slavoj Žižek, quoted by Fisher in <i>Capitalist Realism</i></p>
+</div>
+
+</section>
+
+<section class="slide" id="antihauntology" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1100px;top:720px;width:1100px;height:600px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">ANTI­HAUNTOLOGY</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">New sounds say the future is still possible</p>
+</div>
+<div style="display:flex;gap:96px;align-items:flex-end">
+<div style="width:640px;flex:none;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:36px;font-weight:700;line-height:1.3;color:#ffffff">Matt Bluemink, <i>Blue Labyrinths</i>, 2021</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Stiegler, Simondon, Yuk Hui</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8"><i>The Future is Not Lost</i>, Becoming Press, 2026</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:32px;line-height:1.35;color:#ffffff">A reply to Fisher, written when SOPHIE died, January 2021</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:32px;line-height:1.35;color:#ffffff">Hauntology lives with the ghosts of the past, a logic of depression</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:32px;line-height:1.35;color:#ffffff">SOPHIE, Arca, Iglooghost, hyperpop. Music that sounds like no past</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:32px;line-height:1.35;color:#ffffff">A logic of hope, voices from the future guiding the present</p></div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="futurability" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute;left:-260px;top:340px;width:1500px;height:720px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">FUTURABILITY</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Many futures already exist in the present</p>
+</div>
+<div style="display:flex;gap:96px;align-items:flex-end">
+<div style="width:640px;flex:none;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:36px;font-weight:700;line-height:1.3;color:#ffffff">Franco Berardi, <i>Futurability</i>, Verso, 2017</p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Six years after <i>After the Future</i></p>
+<p style="font-size:28px;line-height:1.4;color:#a9a8a8">Close to Deleuze and the virtual</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:32px;line-height:1.35;color:#ffffff">The future in singular, the big promise of the 20th century, is over</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:32px;line-height:1.35;color:#ffffff">Possibility, what the present contains</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:32px;line-height:1.35;color:#ffffff">Potency, the energy to make one real</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:32px;line-height:1.35;color:#ffffff">Power, what decides which one wins</p></div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="bridge" data-transition="fade" style="display:flex; flex-direction:row; gap:32px; align-items:center; padding:112px; background:#2e2d2d">
+  <img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute; top:560px; left:1240px; width:1000px; height:820px; object-fit:contain">
+  <div style="display:flex; flex-direction:column; gap:24px; flex:1">
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; font-weight:700; letter-spacing:6px; color:#a9a8a8">TUE 10:00</p>
+    <h2 style="font-family:Syncopate, sans-serif; font-size:72px; font-weight:700; line-height:1.1; letter-spacing:2px; color:#a9a8a8">FUTURES WE INHERITED</h2>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:24px; flex:1">
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; font-weight:700; letter-spacing:6px; color:#d9d8d8">TUE 14:00</p>
+    <h2 style="font-family:Syncopate, sans-serif; font-size:72px; font-weight:700; line-height:1.1; letter-spacing:2px; color:#ffffff">IMAGINE AND BUILD</h2>
+  </div>
+</section>
+
+<section class="slide" id="speculative" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<div style="position:absolute;left:0;top:0;width:880px;height:1080px;background:#e3e7ea"></div>
+<img src="img-dfdaf9d0.jpg" alt="Cover of Speculative Everything: a green landscape sculpture on a train-like base" style="position:absolute;left:80px;top:80px;width:720px;height:920px;object-fit:contain">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1360px;top:-300px;width:820px;height:600px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">SPECULATIVE EVERYTHING</h2>
+<p style="font-size:32px;line-height:1.3;text-align:right;color:#d9d8d8">Design that imagines other worlds to discuss them</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:32px;font-weight:700;line-height:1.3;color:#ffffff">Anthony Dunne &amp; Fiona Raby</p>
+<p style="font-size:24px;line-height:1.4;color:#a9a8a8"><i>Speculative Everything</i>, MIT Press, 2013</p>
+<p style="font-size:24px;line-height:1.4;color:#a9a8a8">Design Interactions, Royal College of Art, London</p>
+</div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">01</p><p style="font-size:28px;line-height:1.35;color:#ffffff">Speculative design asks questions with objects</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">02</p><p style="font-size:28px;line-height:1.35;color:#ffffff">Objects from worlds that do not exist yet</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">03</p><p style="font-size:28px;line-height:1.35;color:#ffffff"><i>United Micro Kingdoms</i>, 2013. England split in four regions, each with its own technology and politics</p></div>
+<div style="display:flex;gap:24px;align-items:baseline"><p style="flex:none;font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#a9a8a8">04</p><p style="font-size:28px;line-height:1.35;color:#ffffff">What if…?</p></div>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="cone" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">FUTURES CONE</h2>
+<svg aria-label="Futures cone. From today at the apex, nested zones widen toward the future: Probable inside Plausible inside Possible. Preferable is a dashed zone overlapping the others." viewBox="0 0 1760 700" style="width:1664px;height:560px">
+<path d="M80 350 L1300 40 A70 310 0 0 1 1300 660 Z" fill="#ffffff" fill-opacity="0.05" stroke="#a9a8a8" stroke-width="2"/>
+<path d="M80 350 L1300 130 A50 220 0 0 1 1300 570 Z" fill="#ffffff" fill-opacity="0.07" stroke="#d9d8d8" stroke-width="2"/>
+<path d="M80 350 L1300 240 A30 110 0 0 1 1300 460 Z" fill="#ffffff" fill-opacity="0.14" stroke="#ffffff" stroke-width="2"/>
+<path d="M80 350 L1300 300 A40 150 0 0 1 1300 600 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-dasharray="16 10"/>
+<circle cx="80" cy="350" r="12" fill="#ffffff"/>
+<text x="40" y="420" font-family="Montserrat, Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff">Today</text>
+<line x1="1250" y1="75" x2="1400" y2="75" stroke="#a9a8a8" stroke-width="2"/>
+<text x="1415" y="80" font-family="Montserrat, Arial, sans-serif" font-size="38" fill="#ffffff">Possible</text>
+<text x="1415" y="115" font-family="Montserrat, Arial, sans-serif" font-size="26" fill="#a9a8a8">not impossible</text>
+<line x1="1250" y1="180" x2="1400" y2="180" stroke="#a9a8a8" stroke-width="2"/>
+<text x="1415" y="185" font-family="Montserrat, Arial, sans-serif" font-size="38" fill="#ffffff">Plausible</text>
+<text x="1415" y="220" font-family="Montserrat, Arial, sans-serif" font-size="26" fill="#a9a8a8">could happen</text>
+<line x1="1250" y1="268" x2="1400" y2="268" stroke="#a9a8a8" stroke-width="2"/>
+<text x="1415" y="285" font-family="Montserrat, Arial, sans-serif" font-size="38" fill="#ffffff">Probable</text>
+<text x="1415" y="320" font-family="Montserrat, Arial, sans-serif" font-size="26" fill="#a9a8a8">likely to happen</text>
+<line x1="1250" y1="560" x2="1400" y2="560" stroke="#ffffff" stroke-width="3" stroke-dasharray="12 8"/>
+<text x="1415" y="565" font-family="Montserrat, Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">Preferable</text>
+<text x="1415" y="600" font-family="Montserrat, Arial, sans-serif" font-size="26" fill="#a9a8a8">what we want</text>
+</svg>
+<p style="font-size:24px;line-height:1.3;color:#a9a8a8">Adapted from Stuart Candy and Joseph Voros</p>
+
+</section>
+
+<section class="slide" id="cone-example-3" data-transition="fade" style="display:flex;flex-direction:column;gap:32px;justify-content:space-between;padding:112px;background:#2e2d2d;font-family:'Montserrat', Arial, sans-serif">
+<div style="display:flex;flex-direction:column;gap:16px;align-items:flex-end">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:96px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">EXAMPLE</h2>
+<p style="font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">Saturday morning</p>
+</div>
+<svg viewBox="0 0 1696 700" style="width:1696px;height:620px;overflow:visible" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" font-family="Montserrat, Arial, sans-serif"><path d="M190,360 L1696,-200 M190,360 L1696,920" stroke="#a9a8a8" stroke-width="3"/><ellipse cx="1390" cy="555" rx="300" ry="160" stroke="#ffffff" stroke-width="3" stroke-dasharray="14 12"/><circle cx="90" cy="312" r="16"/><path d="M90,328 L90,380 M68,420 L90,380 L112,420 M62,370 L90,345 L118,370"/><text x="90" y="470" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="4" fill="#a9a8a8" stroke="none">YOU</text><text x="90" y="506" text-anchor="middle" font-size="26" fill="#ffffff" stroke="none">9 am</text><path d="M530,340 L530,410 M530,385 L750,385 L750,410 M530,360 L750,360"/><circle cx="560" cy="343" r="16"/><path d="M578,350 L700,350 M660,350 L660,350"/><text x="610" y="300" font-size="32" font-weight="700" fill="#ffffff" stroke="none">z Z z</text><text x="640" y="455" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="4" fill="#a9a8a8" stroke="none">PROBABLE</text><text x="640" y="493" text-anchor="middle" font-size="30" fill="#ffffff" stroke="none">You sleep until noon</text><path d="M920,290 L920,190 L1010,130 L1100,190 L1100,290 Z"/><rect x="970" y="205" width="80" height="60"/><path d="M860,60 L846,100" stroke-width="4"/><path d="M910,80 L896,120" stroke-width="4"/><path d="M960,60 L946,100" stroke-width="4"/><path d="M1010,80 L996,120" stroke-width="4"/><path d="M1060,60 L1046,100" stroke-width="4"/><path d="M1110,80 L1096,120" stroke-width="4"/><path d="M1160,60 L1146,100" stroke-width="4"/><circle cx="1010" cy="226" r="9"/><path d="M1010,235 L1010,262" stroke-width="4"/><text x="1010" y="335" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="4" fill="#a9a8a8" stroke="none">PLAUSIBLE</text><text x="1010" y="373" text-anchor="middle" font-size="30" fill="#ffffff" stroke="none">It rains, you stay home</text><path d="M1240,40 L1540,40 L1520,80 L1260,80 Z M1260,80 L1260,190 M1520,80 L1520,190 M1260,140 L1520,140"/><g stroke-width="5"><circle cx="1340" cy="82" r="16"/><path d="M1340,98 L1340,150 M1318,190 L1340,150 L1362,190 M1310,135 L1340,115 L1366,78"/><circle cx="1440" cy="82" r="16"/><path d="M1440,98 L1440,150 M1418,190 L1440,150 L1462,190 M1410,135 L1440,115 L1466,78"/></g><text x="1390" y="232" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="4" fill="#a9a8a8" stroke="none">POSSIBLE</text><text x="1390" y="270" text-anchor="middle" font-size="30" fill="#ffffff" stroke="none">You meet an old friend at the market</text><circle cx="1580" cy="450" r="26"/><path d="M1580,414 L1580,398" stroke-width="4"/><path d="M1580,486 L1580,502" stroke-width="4"/><path d="M1544,450 L1528,450" stroke-width="4"/><path d="M1616,450 L1632,450" stroke-width="4"/><path d="M1605,475 L1617,487" stroke-width="4"/><path d="M1555,425 L1543,413" stroke-width="4"/><path d="M1605,425 L1617,413" stroke-width="4"/><path d="M1555,475 L1543,487" stroke-width="4"/><path d="M1190,590 L1190,500"/><circle cx="1190" cy="465" r="44"/><path d="M1240,592 L1520,592"/><g stroke-width="5"><circle cx="1280" cy="502" r="16"/><path d="M1280,518 L1280,566 L1320,566 L1320,590 M1256,550 L1280,532 L1306,546"/><circle cx="1370" cy="502" r="16"/><path d="M1370,518 L1370,566 L1410,566 L1410,590 M1346,550 L1370,532 L1396,546"/><circle cx="1460" cy="502" r="16"/><path d="M1460,518 L1460,566 L1500,566 L1500,590 M1436,550 L1460,532 L1486,546"/></g><text x="1390" y="642" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="4" fill="#a9a8a8" stroke="none">PREFERABLE</text><text x="1390" y="680" text-anchor="middle" font-size="30" fill="#ffffff" stroke="none">A picnic in the park with friends</text></svg>
+
+</section>
+
+<section class="slide" id="cone-example" data-transition="fade" style="display:flex; flex-direction:column; gap:48px; justify-content:space-between; padding:112px; background:#2e2d2d">
+  <img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute; top:460px; left:300px; width:1600px; height:760px; object-fit:contain">
+  <div style="display:flex; flex-direction:column; gap:24px; align-items:end">
+    <h2 style="font-family:Syncopate, sans-serif; font-size:112px; font-weight:700; line-height:0.95; letter-spacing:2px; text-align:right; color:#ffffff">EXAMPLE</h2>
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; line-height:1.3; text-align:right; color:#d9d8d8">A music festival in 2050</p>
+  </div>
+  <div style="display:flex; flex-direction:row; gap:16px">
+    <div style="display:flex; flex-direction:column; gap:8px; flex:1; padding:32px; background:#ffffffa6">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">PROBABLE</p>
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.25; color:#2e2d2d">Every show streamed, tickets priced by algorithm</h3>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; flex:1; padding:32px; background:#ffffffa6">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">PLAUSIBLE</p>
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.25; color:#2e2d2d">Festivals move to winter, summers are too hot</h3>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; flex:1; padding:32px; background:#ffffffa6">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">POSSIBLE</p>
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.25; color:#2e2d2d">Music grown by plants and bacteria</h3>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; flex:1; padding:32px; background:#ffffffa6">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#3f3e3e">PREFERABLE</p>
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:36px; font-weight:700; line-height:1.25; color:#2e2d2d">Small local festivals, free, run by the neighborhood</h3>
+    </div>
+  </div>
+  
+</section>
+
+<section class="slide" id="cone-example-2" data-transition="fade" style="display:flex;flex-direction:column;gap:48px;justify-content:space-between;padding:112px;background:#2e2d2d">
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:-200px;top:380px;width:1400px;height:820px;object-fit:contain">
+<div style="display:flex;flex-direction:column;gap:24px;align-items:flex-end">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">EXAMPLE</h2>
+<p style="font-family:'Montserrat', Arial, sans-serif;font-size:40px;line-height:1.3;text-align:right;color:#d9d8d8">A museum in 2050</p>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-family:'Montserrat', Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">PROBABLE</p>
+<h3 style="font-family:'Montserrat', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">Tickets by app, long lines, an AI guide in your ear</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-family:'Montserrat', Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">PLAUSIBLE</p>
+<h3 style="font-family:'Montserrat', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">Half the collection goes back to its countries of origin</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-family:'Montserrat', Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">POSSIBLE</p>
+<h3 style="font-family:'Montserrat', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">A museum with no objects, only the memories of visitors</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;padding:32px;background:rgba(255,255,255,0.65)">
+<p style="font-family:'Montserrat', Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:4px;color:#3f3e3e">PREFERABLE</p>
+<h3 style="font-family:'Montserrat', Arial, sans-serif;font-size:36px;font-weight:700;line-height:1.25;color:#2e2d2d">Free museums that lend artworks to your home for a month</h3>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="interactive-fiction" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<img src="img-3673ffd2.jpg" alt="Colossal Cave Adventure running on a VT100 terminal" style="position:absolute;left:0;top:0;width:880px;height:1080px;object-fit:cover">
+<p style="position:absolute;left:0;bottom:0;width:880px;padding:16px 48px;font-size:24px;color:#d9d8d8;background:rgba(31, 30, 30, 0.75)"><i>Colossal Cave Adventure</i> on a VT100. Photo: Autopilot, CC BY-SA 3.0</p>
+<img src="img-877dabbf.png" alt="Small cluster of blurred lights" style="position:absolute;left:1480px;top:-220px;width:700px;height:560px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">INTERACTIVE FICTION</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Stories you play with words</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Colossal Cave Adventure</i>, Will Crowther, 1976</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">You type, the text answers</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Zork</i>, MIT, 1977, then Infocom</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8"><i>Choose Your Own Adventure</i> books, 1979</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Borges, <i>The Garden of Forking Paths</i>, 1941</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Today, Inform, Ink, Twine</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="twine" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px">
+<div style="position:absolute;left:0;top:0;width:880px;height:1080px;background:#1f1e1e"></div>
+<img src="img-a0db049d.jpg" alt="Twine 2 editor: a map of linked passages and a passage being edited" style="position:absolute;left:32px;top:200px;width:816px;height:640px;object-fit:contain">
+<p style="position:absolute;left:48px;bottom:48px;width:784px;font-size:24px;color:#a9a8a8">Twine 2.9 editor. Screenshot: AlexRosenthal, CC0</p>
+<img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute;left:1400px;top:-320px;width:860px;height:700px;object-fit:contain">
+<div style="position:absolute;left:976px;top:112px;width:832px;height:856px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:72px;font-weight:700;line-height:1;letter-spacing:2px;text-align:right;color:#ffffff">TWINE</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Chris Klimas, 2009</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Free, open source</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">twinery.org, runs in the browser</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Your story as a map of passages and links</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Publishes one HTML file</p>
+<p style="font-size:32px;line-height:1.4;color:#d9d8d8">Used by artists, writers, people outside the game industry</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="play" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute;left:-260px;top:340px;width:1500px;height:720px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:24px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">PLAY</h2>
+<p style="font-size:32px;font-weight:700;letter-spacing:6px;text-align:right;color:#d9d8d8">10 MIN</p>
+</div>
+<div style="display:flex;gap:16px">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:rgba(255, 255, 255, 0.65);padding:40px">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d"><i>Queers in Love at the End of the World</i></h3>
+<p style="font-size:32px;line-height:1.4;color:#3f3e3e">Anna Anthropy, 2013</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:rgba(255, 255, 255, 0.65);padding:40px">
+<h3 style="font-size:40px;font-weight:700;line-height:1.2;color:#2e2d2d"><i>The Uncle Who Works for Nintendo</i></h3>
+<p style="font-size:32px;line-height:1.4;color:#3f3e3e">Michael Lutz, 2014</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="basics" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:64px">
+<img src="img-e5ffcf09.png" alt="Blurred blue and red light" style="position:absolute;left:1300px;top:600px;width:900px;height:720px;object-fit:contain">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:112px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">BASICS</h2>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:center;gap:32px">
+<p style="width:400px;font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Passage</p>
+</div>
+<div style="display:flex;align-items:center;gap:32px">
+<p style="width:400px;font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Link</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:36px;line-height:1.3;color:#ffffff;background:#1f1e1e;padding:16px 24px">[[Go outside-&gt;Street]]</p>
+</div>
+<div style="display:flex;align-items:center;gap:32px">
+<p style="width:400px;font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Image</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:36px;line-height:1.3;color:#ffffff;background:#1f1e1e;padding:16px 24px">&lt;img src="URL" width="100%"&gt;</p>
+</div>
+<div style="display:flex;align-items:center;gap:32px">
+<p style="width:400px;font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Play</p>
+</div>
+<div style="display:flex;align-items:center;gap:32px">
+<p style="width:400px;font-size:40px;font-weight:700;line-height:1.3;color:#ffffff">Publish to File</p>
+</div>
+</div>
+</section>
+
+<section class="slide" id="exercise" data-transition="fade" style="background:#2e2d2d;color:#ffffff;font-family:'Montserrat', Arial, sans-serif;padding:112px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<img src="img-fe1e0ecb.png" alt="Blurred blue arc" style="position:absolute;left:1100px;top:760px;width:1100px;height:600px;object-fit:contain">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px">
+<h2 style="font-family:'Syncopate', 'Arial Black', sans-serif;font-size:96px;font-weight:700;line-height:0.95;letter-spacing:2px;text-align:right;color:#ffffff">EXQUISITE CORPSE</h2>
+<p style="font-size:32px;line-height:1.3;text-align:right;color:#d9d8d8"><i>Cadavre exquis</i>, Surrealists, Paris, c. 1925</p>
+<p style="font-size:28px;font-weight:700;letter-spacing:6px;text-align:right;color:#a9a8a8">30 MIN</p>
+</div>
+<div style="display:flex;gap:64px;align-items:flex-end">
+<svg viewBox="0 0 400 660" style="width:360px;height:594px;flex:none" fill="none" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="A folded paper with a strange figure drawn in three parts by three players: head, body and legs">
+<rect x="0" y="0" width="400" height="220" fill="#f4f4f2"/>
+<rect x="0" y="220" width="400" height="220" fill="#e9e9e5"/>
+<rect x="0" y="440" width="400" height="220" fill="#f4f4f2"/>
+<g stroke="#2e2d2d" stroke-width="5">
+<circle cx="200" cy="110" r="62"/>
+<circle cx="200" cy="100" r="22"/>
+<circle cx="200" cy="100" r="6" fill="#2e2d2d"/>
+<path d="M150,62 L135,18 M250,62 L265,18 M135,18 l-14,-8 M135,18 l4,-15 M265,18 l14,-8 M265,18 l-4,-15"/>
+<path d="M176,142 Q200,160 224,142"/>
+<path d="M180,170 L178,220 M220,170 L222,220"/>
+</g>
+<g stroke="#1f1e1e" stroke-width="6">
+<path d="M178,220 L176,250 M222,220 L224,250"/>
+<rect x="128" y="250" width="144" height="150" rx="24"/>
+<circle cx="200" cy="322" r="34"/>
+<path d="M200,322 L200,300 M200,322 L216,330"/>
+<path d="M128,280 L72,250 L58,226 M72,250 L48,262 M272,280 L330,300 L352,282 M330,300 L344,326"/>
+<path d="M168,400 L166,440 M232,400 L234,440"/>
+</g>
+<g stroke="#3f3e3e" stroke-width="5">
+<path d="M166,440 L160,560 L150,600 M234,440 L262,500 L236,550 L268,600"/>
+<circle cx="150" cy="622" r="22"/>
+<path d="M268,600 L240,630 M268,600 L268,636 M268,600 L296,628"/>
+</g>
+<path d="M0,220 L400,220 M0,440 L400,440" stroke="#a9a8a8" stroke-width="3" stroke-dasharray="10 8"/>
+</svg>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">Groups of 4–5. One laptop per group</p>
+<p style="font-size:36px;font-style:italic;line-height:1.25;color:#ffffff">Start: “The night music changed…”</p>
+<p style="font-size:28px;font-weight:700;line-height:1.35;color:#ffffff;margin-top:8px">Your turn</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">Read only the last passage</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">Write 2–3 sentences</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">End with 2 links</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">Pass the laptop</p>
+</div>
+<div style="width:640px;flex:none;display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">A link can open a new passage</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.3;color:#ffffff;background:#1f1e1e;padding:10px 18px">[[Run away]]</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">or go back to an old one</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.3;color:#ffffff;background:#1f1e1e;padding:10px 18px">[[Run away-&gt;The night music changed]]</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">Add images</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;line-height:1.3;color:#ffffff;background:#1f1e1e;padding:10px 18px">&lt;img src="URL" width="100%"&gt;</p>
+<p style="font-size:28px;line-height:1.35;color:#d9d8d8">Don’t look at the screen when it’s not your turn</p>
+<p style="font-size:28px;font-weight:700;line-height:1.35;color:#ffffff">At the end, play your story from the start</p>
+</div>
+</div>
+
+</section>
+
+<section class="slide" id="challenge" data-transition="fade" style="display:flex; flex-direction:column; gap:48px; justify-content:space-between; padding:112px; background:#2e2d2d">
+  <img src="img-55368cdd.png" alt="Two blurred blue spheres" style="position:absolute; top:520px; left:200px; width:1700px; height:760px; object-fit:contain">
+  <h2 style="font-family:Syncopate, sans-serif; font-size:112px; font-weight:700; line-height:0.95; letter-spacing:2px; text-align:right; color:#ffffff">FOR TOMORROW</h2>
+  <div style="display:flex; flex-direction:column; gap:16px">
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:72px; line-height:1.1; color:#ffffff">We will build a cultural practice in 2050</p>
+    <p style="font-family:Montserrat, Arial, sans-serif; font-size:32px; line-height:1.4; color:#d9d8d8">A music scene, a festival, a museum, a party, a ritual, a craft</p>
+  </div>
+  <div style="display:flex; flex-direction:row; gap:16px">
+    <div style="display:flex; flex-direction:column; flex:1; padding:32px; background:#ffffffa6">
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">A Twine where the reader lives it</h3>
+    </div>
+    <div style="display:flex; flex-direction:column; flex:1; padding:32px; background:#ffffffa6">
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">Three endings, in three parts of the cone</h3>
+    </div>
+    <div style="display:flex; flex-direction:column; flex:1; padding:32px; background:#ffffffa6">
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">One thing from today survives</h3>
+    </div>
+    <div style="display:flex; flex-direction:column; flex:1; padding:32px; background:#ffffffa6">
+      <h3 style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#2e2d2d">Wednesday 16:00, we play them</h3>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="teams" data-transition="fade" style="display:flex; flex-direction:column; gap:48px; justify-content:space-between; padding:112px; background:#2e2d2d">
+  <img src="img-4da1971b.png" alt="Blurred blue light" style="position:absolute; top:520px; left:1200px; width:1000px; height:820px; object-fit:contain">
+  <h2 style="font-family:Syncopate, sans-serif; font-size:112px; font-weight:700; line-height:0.95; letter-spacing:2px; text-align:right; color:#ffffff">TEAMS</h2>
+  <div style="display:flex; flex-direction:column; gap:24px">
+    <div style="display:flex; flex-direction:row; gap:32px; align-items:center">
+      <img src="img-2edec64f.png" alt="Orange and cyan orb" style="width:72px; height:72px; object-fit:contain">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#ffffff">Teams of 3–4</p>
+    </div>
+    <div style="display:flex; flex-direction:row; gap:32px; align-items:center">
+      <img src="img-098f30ae.png" alt="Blue and lime orb" style="width:72px; height:72px; object-fit:contain">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#ffffff">Your <i>what if</i></p>
+    </div>
+    <div style="display:flex; flex-direction:row; gap:32px; align-items:center">
+      <img src="img-bcebd829.png" alt="Lilac and mint orb" style="width:72px; height:72px; object-fit:contain">
+      <p style="font-family:Montserrat, Arial, sans-serif; font-size:40px; font-weight:700; line-height:1.2; color:#ffffff">Narrative idea</p>
+    </div>
+  </div>
+</section>
+
+</div>
+<div id="notes"></div>
+<div id="hud"></div>
+<div id="help">← → move · F fullscreen · Home/End</div>
+<script>
+(function(){
+  var stage=document.getElementById('stage');
+  var slides=[].slice.call(stage.querySelectorAll('section.slide'));
+  var notes=document.getElementById('notes'), hud=document.getElementById('hud');
+  var cur=0;
+  function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);stage.style.transform='translate(-50%,-50%) scale('+s+')';}
+  function show(i){
+    i=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,k){
+      s.classList.toggle('active',k===i);
+      s.querySelectorAll('video').forEach(function(v){ if(k===i){v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;v.play();});} else {v.pause();} });
+    });
+    cur=i;
+    var a=slides[i].querySelector('aside'); notes.textContent=a?a.textContent.trim():'';
+    hud.textContent=(i+1)+' / '+slides.length;
+    if(location.hash!=='#'+(i+1)) history.replaceState(null,'','#'+(i+1));
+  }
+  document.addEventListener('keydown',function(e){
+    var k=e.key;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '||k==='Enter'){e.preventDefault();show(cur+1);}
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'||k==='Backspace'){e.preventDefault();show(cur-1);}
+    else if(k==='Home'){show(0);} else if(k==='End'){show(slides.length-1);}
+    else if(k==='f'||k==='F'){ if(!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+    else if(k==='n'||k==='N'){notes.classList.toggle('on');}
+  });
+  stage.addEventListener('click',function(e){
+    if(e.target.tagName==='VIDEO'){var v=e.target; v.muted=false; if(v.paused)v.play(); else v.pause(); return;}
+    if(e.target.closest('a'))return;
+    show(e.clientX>window.innerWidth/2?cur+1:cur-1);
+  });
+  window.addEventListener('resize',fit);
+  fit();
+  var h=parseInt(location.hash.slice(1),10); show(isNaN(h)?0:h-1);
+})();
+</script>
+</body>
+</html>

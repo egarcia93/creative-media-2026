@@ -1,0 +1,202 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Aide-mémoire Twine</title><style>@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(syncopate-latin-ext-400-normal.woff2) format('woff2');
+}
+/* syncopate-latin-ext-700-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(syncopate-latin-ext-700-normal.woff2) format('woff2');
+}
+/* syncopate-latin-400-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(syncopate-latin-400-normal.woff2) format('woff2');
+}
+/* syncopate-latin-700-normal */
+@font-face {
+  font-family: 'Syncopate';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(syncopate-latin-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-ext-400-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-ext-400-italic.woff2) format('woff2');
+}
+/* montserrat-latin-ext-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-ext-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-ext-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-ext-700-italic.woff2) format('woff2');
+}
+/* montserrat-latin-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-400-normal.woff2) format('woff2');
+}
+/* montserrat-latin-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(montserrat-latin-400-italic.woff2) format('woff2');
+}
+/* montserrat-latin-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-700-normal.woff2) format('woff2');
+}
+/* montserrat-latin-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url(montserrat-latin-700-italic.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-ext-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-ext-600-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(jetbrains-mono-latin-ext-600-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(jetbrains-mono-latin-400-normal.woff2) format('woff2');
+}
+/* jetbrains-mono-latin-600-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(jetbrains-mono-latin-600-normal.woff2) format('woff2');
+}
+:root{--bg:#2e2d2d;--deep:#1f1e1e;--ink:#ffffff;--soft:#d9d8d8;--dim:#a9a8a8;--line:#4a4949}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:Montserrat,Arial,sans-serif;font-size:16px;line-height:1.5;padding:48px 16px 64px}
+.wrap{max-width:1100px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:40px;border-bottom:1px solid var(--line);padding-bottom:24px}
+h1{font-family:Syncopate,'Arial Black',sans-serif;font-weight:700;font-size:40px;line-height:1.05;letter-spacing:1px;text-transform:uppercase}
+.sub{color:var(--dim);font-size:14px;letter-spacing:3px;text-transform:uppercase;margin-top:8px}
+nav a{color:var(--soft);font-size:14px;margin-left:16px}
+.grid{columns:2 460px;column-gap:40px}
+section{break-inside:avoid;margin-bottom:32px}
+h2{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+p{color:var(--soft);margin-bottom:10px}
+p.small{font-size:13px;color:var(--dim)}
+pre{background:var(--deep);padding:14px 16px;margin-bottom:12px;overflow-x:auto}
+code{font-family:'JetBrains Mono','Courier New',monospace;font-size:13.5px;color:var(--ink)}
+table{border-collapse:collapse;width:100%;margin-bottom:10px}
+td{border-top:1px solid var(--line);padding:7px 8px 7px 0;vertical-align:top;color:var(--soft);font-size:14px}
+td:first-child{white-space:nowrap;padding-right:16px;width:1%}
+footer{margin-top:32px;color:var(--dim);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--soft)}
+@media print{
+ @page{size:A4;margin:12mm}
+ html,body{background:#ffffff;color:#1f1e1e}
+ body{padding:0;font-size:11px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ header,td,footer{border-color:#cfcfcc} p{color:#2e2d2d} h2,.sub,p.small,footer{color:#6f6e6e}
+ footer a{color:#2e2d2d} pre{background:#f0f0ee;white-space:pre-wrap;word-break:break-all} code{color:#1f1e1e} td{color:#2e2d2d}
+ nav{display:none}
+ h1{font-size:26px} header{margin-bottom:18px;padding-bottom:12px}
+ .grid{columns:2;column-gap:24px}
+ section{margin-bottom:16px}
+ code{font-size:10px} pre{padding:8px 10px;margin-bottom:8px} td{font-size:10.5px;padding:4px 6px 4px 0}
+ p{margin-bottom:6px} p.small{font-size:9.5px}
+}
+</style></head><body><div class="wrap">
+<header><div><h1>Aide-mémoire Twine</h1><p class="sub">Harlowe 3 · Creative Media 2026</p></div>
+<nav><a href="index.html">Creative Media 2026</a><a href="cheatsheet-en.html">English version</a><a href="twine-cheatsheet-fr.pdf">Télécharger le PDF</a></nav></header>
+<div class="grid"><section><h2>Créer un passage</h2><p>Écrivez un nom entre doubles crochets dans un passage. Twine crée le nouveau passage et trace la flèche entre les deux.</p><pre><code>[[Axolotl]]</code></pre><p>Pour renommer un passage, double-cliquez sur son titre. Twine met à jour les liens qui pointent vers lui.</p></section><section><h2>Relier des passages</h2><p>Une flèche ou une barre verticale sépare ce que lit le lecteur de la destination. Les quatre formes ci-dessous mènent au même endroit.</p><table><tr><td><code>[[Héron]]</code></td><td>Le nom du passage est aussi le texte visible</td></tr><tr><td><code>[[se cache du->Héron]]</code></td><td>La flèche pointe vers le passage</td></tr><tr><td><code>[[Héron&lt;-se cache du]]</code></td><td>La même chose, à l’envers</td></tr><tr><td><code>[[se cache du|Héron]]</code></td><td>La barre sépare le texte et la destination</td></tr></table><p class="small">Barre verticale <code>|</code> : AltGr + 6 sur un clavier AZERTY · Option + Maj + L sur un Mac français · Maj + \ sur un clavier anglais.</p></section><section><h2>Images et vidéo</h2><p>Du HTML normal dans le passage. Le fichier doit être en ligne, avec son adresse complète. Clic droit sur une image, puis copier l’adresse de l’image.</p><pre><code>&lt;img src=&quot;https://example.com/axolotl.jpg&quot;&gt;
+&lt;img src=&quot;https://example.com/axolotl.jpg&quot; width=&quot;400&quot;&gt;</code></pre><pre><code>&lt;video src=&quot;https://example.com/clip.mp4&quot; autoplay loop muted width=&quot;100%&quot;&gt;&lt;/video&gt;</code></pre><pre><code>&lt;iframe width=&quot;100%&quot; height=&quot;400&quot; src=&quot;https://www.youtube.com/embed/ID&quot;&gt;&lt;/iframe&gt;</code></pre><p class="small">L’identifiant YouTube est la partie après <code>watch?v=</code> dans le lien.</p></section><section><h2>CSS : où l’écrire</h2><p>Dans la feuille de style de l’histoire, pas dans un passage. Ouvrez le menu Story et cliquez sur Stylesheet. Elle s’applique à toute l’histoire.</p><table><tr><td><code>tw-story</code></td><td>Toute l’histoire : fond, couleur du texte, typographie</td></tr><tr><td><code>tw-passage</code></td><td>Seulement le passage visible : marges et largeur</td></tr><tr><td><code>tw-link</code></td><td>Les liens. Sans cela, ils restent bleus. Accepte color, font-weight, text-decoration</td></tr><tr><td><code>tw-link:hover</code></td><td>Un lien sous la souris</td></tr><tr><td><code>tw-sidebar</code></td><td>Les flèches annuler et rétablir</td></tr><tr><td><code>[tags="..."]</code></td><td>Les étiquettes des passages, pour donner à chacune son propre aspect</td></tr></table></section><section><h2>CSS : recettes</h2><p>Copiez, collez, changez les valeurs.</p><pre><code>tw-story {
+  background-color: #111111;
+  color: #eeeeee;
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+tw-link {
+  color: #d4a017;
+  font-weight: bold;
+}
+
+tw-link:hover {
+  color: #ffffff;
+}
+
+[tags=&quot;amphibien&quot;] {
+  background-color: #0d2b2b;
+}</code></pre></section><section><h2>CSS : autres recettes</h2><p>Une image derrière tout</p><pre><code>tw-story {
+  background: url(&quot;https://example.com/fond.jpg&quot;) center / cover;
+}</code></pre><p>Un cadre pour lire</p><pre><code>tw-passage {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2em;
+}</code></pre><p>Une police Google Fonts. L’import va sur la toute première ligne de la feuille de style</p><pre><code>@import url(&quot;https://fonts.googleapis.com/css2?family=Inter&amp;display=swap&quot;);
+
+tw-story {
+  font-family: &quot;Inter&quot;, sans-serif;
+}</code></pre><p>Masquer les flèches annuler et rétablir</p><pre><code>tw-sidebar {
+  display: none;
+}</code></pre></section><section><h2>Effets dans un passage</h2><p>Les modificateurs de Harlowe mettent en forme une partie d’un seul passage.</p><pre><code>(text-colour: #ff2bd6)[Le signal est revenu]
+(text-style: &quot;blur&quot;)[un souvenir]
+(font: &quot;Courier New&quot;)[FLASH SPÉCIAL]
+(transition: &quot;dissolve&quot;)[Nous sommes en 2050]</code></pre></section><section><h2>Signez</h2><p>Dans le premier passage : « Created by » et les noms complets de tous les membres de l’équipe.</p><pre><code>Created by
+Prénom Nom, Prénom Nom, Prénom Nom</code></pre></section><section><h2>Exporter et sauvegarder</h2><p>Menu Build, option Publish to File. Vous obtenez un fichier .html qui s’ouvre dans n’importe quel navigateur et peut être mis en ligne sur un serveur.</p><p>Twine enregistre dans votre navigateur. Utilisez Library › Archive pour garder une copie de sauvegarde.</p></section></div>
+<footer>Enrique García-Alcalá · <a href="mailto:egarciaa@tec.mx">egarciaa@tec.mx</a></footer>
+</div></body></html>
